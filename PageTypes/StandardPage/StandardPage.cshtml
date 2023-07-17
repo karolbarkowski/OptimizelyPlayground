@@ -1,0 +1,9 @@
+﻿@using EPiServer.Web.Mvc.Html
+@using Optimizely.PageTypes.StandardPage
+@model StandardPage
+
+
+<div>
+	<h1>@Html.PropertyFor(m => m.Title)</h1>
+	@Html.PropertyFor(m => m.MainBody);
+</div>

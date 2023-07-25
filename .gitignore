@@ -20,3 +20,4 @@ modules/
 thumbs.db
 ehthumbs.db
 desktop.ini
+/App_Data/Optimizely_log.ldf

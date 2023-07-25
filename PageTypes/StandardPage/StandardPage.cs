@@ -8,15 +8,15 @@ namespace Optimizely.PageTypes.StandardPage
                Description = "The standard page.",
                AvailableInEditMode = true)]
     //[ImageUrl("~/styles/images/page_type.png")]
-    public class StandardPage : PageData
-    {
+    public class StandardPage : SitePageData
+	{
         [CultureSpecific]
         [Display(
                Name = "Title",
                Description = "Title for the page",
                GroupName = SystemTabNames.Content,
                Order = 1)]
-        public virtual string? Title { get; set; }
+        public virtual string Title { get; set; }
 
         [CultureSpecific]
         [Display(

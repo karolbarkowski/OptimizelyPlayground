@@ -3,6 +3,7 @@ using EPiServer.Cms.UI.AspNetIdentity;
 using EPiServer.Scheduler;
 using EPiServer.ServiceLocation;
 using EPiServer.Web.Routing;
+using Optimizely.OptimizelyConfig;
 
 namespace Optimizely;
 
@@ -27,7 +28,9 @@ public class Startup
         services
             .AddCmsAspNetIdentity<ApplicationUser>()
             .AddCms()
-            .AddAdminUserRegistration()
+            .AddCustomViewLocations()
+            .AddCustomActionFilters()
+			.AddAdminUserRegistration()
             .AddEmbeddedLocalization<Startup>();
     }
 

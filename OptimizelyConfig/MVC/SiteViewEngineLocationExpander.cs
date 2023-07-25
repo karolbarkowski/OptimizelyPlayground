@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc.Razor;
 
-namespace Optimizely.OptimizelyConfig
+namespace Optimizely.OptimizelyConfig.MVC
 {
     public class SiteViewEngineLocationExpander : IViewLocationExpander
     {

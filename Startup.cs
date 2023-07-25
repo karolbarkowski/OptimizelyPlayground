@@ -3,7 +3,7 @@ using EPiServer.Cms.UI.AspNetIdentity;
 using EPiServer.Scheduler;
 using EPiServer.ServiceLocation;
 using EPiServer.Web.Routing;
-using Optimizely.OptimizelyConfig;
+using Optimizely.OptimizelyConfig.MVC;
 
 namespace Optimizely;
 

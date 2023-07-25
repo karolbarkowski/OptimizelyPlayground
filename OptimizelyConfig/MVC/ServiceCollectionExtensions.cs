@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Razor;
-using Optimizely.OptimizelyConfig.MVC;
 
-namespace Optimizely.OptimizelyConfig
+namespace Optimizely.OptimizelyConfig.MVC
 {
     public static class ServiceCollectionExtensions
     {
@@ -12,10 +11,10 @@ namespace Optimizely.OptimizelyConfig
             return services;
         }
 
-		public static IServiceCollection AddCustomActionFilters(this IServiceCollection services)
-		{
-			services.Configure<MvcOptions>(options => options.Filters.Add<PageContextActionFilter>());
-			return services;
-		}
-	}
+        public static IServiceCollection AddCustomActionFilters(this IServiceCollection services)
+        {
+            services.Configure<MvcOptions>(options => options.Filters.Add<PageContextActionFilter>());
+            return services;
+        }
+    }
 }

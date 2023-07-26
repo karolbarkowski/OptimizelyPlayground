@@ -8,7 +8,7 @@ namespace Optimizely.PageTypes.ViewModelPage
                GUID = "AC96A854-9085-4792-BF92-530F314BFE0B",
                Description = "ViewModel page.",
                AvailableInEditMode = true)]
-    //[ImageUrl("~/styles/images/page_type.png")]
+    [ImageUrl("~/PageTypes/ViewModelPage/thumbnail.png")]
     public class ViewModelPage : SitePageData
 	{
         [CultureSpecific]

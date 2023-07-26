@@ -8,7 +8,7 @@ namespace Optimizely.PageTypes.StandardPage
                GUID = "934E7266-FB8C-4DEA-B033-3B4E6AE6CBCF",
                Description = "The standard page.",
                AvailableInEditMode = true)]
-    //[ImageUrl("~/styles/images/page_type.png")]
+    [ImageUrl("~/PageTypes/StandardPage/thumbnail.png")]
     public class StandardPage : SitePageData
 	{
         [CultureSpecific]

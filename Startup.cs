@@ -3,6 +3,7 @@ using EPiServer.Cms.UI.AspNetIdentity;
 using EPiServer.Scheduler;
 using EPiServer.ServiceLocation;
 using EPiServer.Web.Routing;
+using Microsoft.Extensions.FileProviders;
 using Optimizely.OptimizelyConfig.MVC;
 
 namespace Optimizely;
@@ -41,7 +42,16 @@ public class Startup
             app.UseDeveloperExceptionPage();
         }
 
+        //serve files from wwwroot
         app.UseStaticFiles();
+
+        //serve page type thumbnail files
+        app.UseStaticFiles(new StaticFileOptions
+        {
+            FileProvider = new PhysicalFileProvider(Path.Combine(_webHostingEnvironment.ContentRootPath, "PageTypes")),
+            RequestPath = "/PageTypes"
+        });
+
         app.UseRouting();
         app.UseAuthentication();
         app.UseAuthorization();

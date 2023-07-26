@@ -1,5 +1,6 @@
 using EPiServer.Web.Mvc;
 using Microsoft.AspNetCore.Mvc;
+using Optimizely.PageTypes._BasePageConfig;
 
 namespace Optimizely.PageTypes.StandardPage
 {
@@ -8,7 +9,7 @@ namespace Optimizely.PageTypes.StandardPage
         [HttpGet]
         public IActionResult Index(StandardPage currentPage)
         {
-            return View(currentPage);
+            return View(PageViewModel.Create(currentPage));
         }
     }
 }

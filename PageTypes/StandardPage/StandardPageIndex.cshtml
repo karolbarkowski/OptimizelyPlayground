@@ -1,7 +1,6 @@
-﻿@using EPiServer.Web.Mvc.Html
-@model Optimizely.PageTypes.StandardPage.StandardPage
+﻿@using Optimizely.PageTypes.StandardPage;
+@using Optimizely.PageTypes._BasePageConfig;
+@model PageViewModel<StandardPage>
 
-<div>
-	<h1>@Html.PropertyFor(m => m.Title)</h1>
-	@Html.PropertyFor(m => m.MainBody)
-</div>
+<h1 epi-property="@Model.CurrentPage.Title" />
+<div class="main-body" epi-property="@Model.CurrentPage.MainBody" />

@@ -1,14 +1,8 @@
-﻿@using EPiServer.Web.Mvc.Html;
-@using Optimizely.PageTypes.ViewModelPage
+﻿@using Optimizely.PageTypes.ViewModelPage
 @model ViewModelPageModel
 
-<div>
-	<h1>Title: @Html.PropertyFor(m => m.CurrentPage.Title)</h1>
-	<div>Current page name: @Model.CurrentPage.Name</div>
-	<div>Viewmodel property: @Model.ViewModelString</div>
+<h1 epi-property="@Model.CurrentPage.Title" />
+<div epi-property="@Model.CurrentPage.Name" />
+<div epi-property="@Model.ViewModelString" />
 
-	<div>
-		Main body: <br />
-		@Html.PropertyFor(m => m.CurrentPage.MainBody)
-	</div>
-</div>
+<div class="main-body" epi-property="@Model.CurrentPage.MainBody" />

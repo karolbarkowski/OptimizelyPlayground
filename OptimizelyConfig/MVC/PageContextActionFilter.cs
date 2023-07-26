@@ -1,20 +1,20 @@
 ﻿using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc;
-using Optimizely.PageTypes;
 using EPiServer.Web.Routing;
+using Optimizely.PageTypes._BasePageConfig;
 
 namespace Optimizely.OptimizelyConfig.MVC
 {
-	/// <summary>
-	/// Intercepts actions with view models of type IPageViewModel and populates the view models
-	/// Layout and Section properties.
-	/// </summary>
-	/// <remarks>
-	/// This filter frees controllers for pages from having to care about common context needed by layouts
-	/// and other page framework components allowing the controllers to focus on the specifics for the page types
-	/// and actions that they handle.
-	/// </remarks>
-	public class PageContextActionFilter : IResultFilter
+    /// <summary>
+    /// Intercepts actions with view models of type IPageViewModel and populates the view models
+    /// Layout and Section properties.
+    /// </summary>
+    /// <remarks>
+    /// This filter frees controllers for pages from having to care about common context needed by layouts
+    /// and other page framework components allowing the controllers to focus on the specifics for the page types
+    /// and actions that they handle.
+    /// </remarks>
+    public class PageContextActionFilter : IResultFilter
 	{
 		private readonly PageViewContextFactory _contextFactory;
 		public PageContextActionFilter(PageViewContextFactory contextFactory)

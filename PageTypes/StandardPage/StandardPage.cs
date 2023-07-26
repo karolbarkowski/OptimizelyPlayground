@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using Optimizely.PageTypes._BasePageConfig;
 
 namespace Optimizely.PageTypes.StandardPage
 {

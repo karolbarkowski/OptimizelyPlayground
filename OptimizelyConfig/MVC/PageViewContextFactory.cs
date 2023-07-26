@@ -6,11 +6,11 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
-using Optimizely.PageTypes;
+using Optimizely.PageTypes._BasePageConfig;
 
 namespace Optimizely.OptimizelyConfig.MVC
 {
-	[ServiceConfiguration]
+    [ServiceConfiguration]
 	public class PageViewContextFactory
 	{
 		private readonly IContentLoader _contentLoader;

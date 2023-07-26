@@ -59,10 +59,5 @@ namespace Optimizely.OptimizelyConfig
             public const string Strings = "StringList";
             public const string StringsCollection = "StringsCollection";
         }
-
-        /// <summary>
-        /// Virtual path to folder with static graphics, such as "/gfx/"
-        /// </summary>
-        public const string StaticGraphicsFolderPath = "/gfx/";
     }
 }

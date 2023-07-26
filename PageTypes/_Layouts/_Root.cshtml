@@ -8,10 +8,8 @@
     @Html.RenderMetaTags(Model.CurrentPage.MetaDescription, Model.CurrentPage.MetaKeywords)
     @Html.CanonicalLink()
     @Html.AlternateLinks()
-    @*<link rel="stylesheet" href="~/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/style.min.css" />
-    <link rel="stylesheet" href="~/css/theme.min.css" />
-    <link rel="shortcut icon" href="~/favicon.ico" type="image/x-icon" />*@
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@@picocss/pico@1/css/pico.min.css">
+    <link rel="shortcut icon" href="~/favicon.ico" type="image/x-icon" />
     @*<required-client-resources area="Header" />*@
 </head>
 
@@ -25,15 +23,18 @@
 
     @*@Html.FullRefreshPropertiesMetaData()*@
 
-    @{ await Html.ConditionalRenderPartialAsync("Header", !Model.Layout.HideHeader, Model); }
-
     <div class="container">
+        @{
+            await Html.ConditionalRenderPartialAsync("Header/Header", !Model.Layout.HideHeader, Model);
+        }
+
         @RenderBody()
+
+        @{
+            await Html.ConditionalRenderPartialAsync("Footer/Footer", !Model.Layout.HideFooter, Model);
+        }
     </div>
 
-    @{ await Html.ConditionalRenderPartialAsync("Footer", !Model.Layout.HideFooter, Model); }
-
     @*<required-client-resources area="Footer" />*@
-    @*<script src="~/js/bootstrap.bundle.min.js"></script>*@
 </body>
 </html>

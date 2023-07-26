@@ -12,7 +12,8 @@ namespace Optimizely.OptimizelyConfig.MVC
         {
             PageTypesFolder + "{1}/{1}{0}.cshtml",
             BlockFolder + "{1}.cshtml",
-            PagePartialsFolder + "{1}.cshtml"
+            PagePartialsFolder + "{1}.cshtml",
+            PageTypesFolder + "_Layouts/Partials/{0}.cshtml",
         };
 
         public IEnumerable<string> ExpandViewLocations(ViewLocationExpanderContext context, IEnumerable<string> viewLocations)

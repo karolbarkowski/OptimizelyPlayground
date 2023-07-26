@@ -1,24 +1,11 @@
-@using EPiServer.Framework.Web.Mvc.Html
-@using EPiServer.Web.Mvc.Html;
 @using Optimizely.PageTypes._BasePageConfig;
-
 @model IPageViewModel<SitePageData>
 
 <!DOCTYPE html>
 <html lang="@(Model.CurrentPage.Language)">
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@Model.CurrentPage.MetaTitle</title>
-    @if (Model.CurrentPage.MetaKeywords != null && Model.CurrentPage.MetaKeywords.Count > 0)
-    {
-        <meta name="keywords" content="@string.Join(",", Model.CurrentPage.MetaKeywords)" />
-    }
-    @if (!string.IsNullOrWhiteSpace(Model.CurrentPage.MetaDescription))
-    {
-        <meta name="description" content="@Model.CurrentPage.MetaDescription" />
-    }
+    @Html.RenderMetaTags(Model.CurrentPage.MetaDescription, Model.CurrentPage.MetaKeywords)
     @Html.CanonicalLink()
     @Html.AlternateLinks()
     @*<link rel="stylesheet" href="~/css/bootstrap.min.css" />
@@ -34,23 +21,17 @@
         await Html.RenderPartialAsync("Readonly", Model);
     }*@
 
-    @*@await Html.RenderEPiServerQuickNavigatorAsync()*@
+    @await Html.RenderEPiServerQuickNavigatorAsync()
 
     @*@Html.FullRefreshPropertiesMetaData()*@
 
-   @* @if (!Model.Layout.HideHeader)
-    {
-        await Html.RenderPartialAsync("Header", Model);
-    }*@
+    @{ await Html.ConditionalRenderPartialAsync("Header", !Model.Layout.HideHeader, Model); }
 
     <div class="container">
         @RenderBody()
     </div>
 
-  @*  @if (!Model.Layout.HideFooter)
-    {
-        await Html.RenderPartialAsync("Footer", Model);
-    }*@
+    @{ await Html.ConditionalRenderPartialAsync("Footer", !Model.Layout.HideFooter, Model); }
 
     @*<required-client-resources area="Footer" />*@
     @*<script src="~/js/bootstrap.bundle.min.js"></script>*@

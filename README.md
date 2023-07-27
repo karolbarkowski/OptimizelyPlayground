@@ -1,39 +1,17 @@
-# Empty CMS template
+# Optimizely playground, practices and recipies
 
-## How to run
+### To discuss...
 
-Chose one of the following options to get started. 
+1. Feature Folders
+1. Custom static files locations for thumbnails
+1. Base page and layout definitions (use Config page instead?)
+1. Custom Tag and Html helpers
+1. Scoped css files
+1. Page types with/without controllers and with/without view models
 
-### Windows
 
-Prerequisities
-- .NET SDK 6+
-- SQL Server 2016 Express LocalDB (or later)
-
-```bash
-$ dotnet run
-````
-
-### Any OS with Docker
-
-Prerequisities
-- Docker
-- Enable Docker support when applying the template
-
-```bash
-$ docker-compose up
-````
-
-> Note that this Docker setup is just configured for local development. Follow this [guide to enable HTTPS](https://github.com/dotnet/dotnet-docker/blob/main/samples/run-aspnetcore-https-development.md).
-
-### Any OS with external database server
-
-Prerequisities
-- .NET SDK 6+
-- SQL Server 2016 (or later) on a external server, e.g. Azure SQL
-
-Create an empty database on the external database server and update the connection string accordingly.
-
-```bash
-$ dotnet run
-````
+### ToDo
+1. Strongly typed translations
+1. Example of built in page properties and possible UI hints for different editors
+1. Block types with/without controllers and with/without view models
+1. Example of custom UI property editor

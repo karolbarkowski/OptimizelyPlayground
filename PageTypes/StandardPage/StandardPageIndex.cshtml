@@ -2,5 +2,7 @@
 @using Optimizely.PageTypes._BasePageConfig;
 @model PageViewModel<StandardPage>
 
-<h2 epi-property="@Model.CurrentPage.Title" />
-<div class="main-body" epi-property="@Model.CurrentPage.MainBody" />
+<div id="standard-page">
+    <h2 epi-property="@Model.CurrentPage.Title" />
+    <div class="main-body" epi-property="@Model.CurrentPage.MainBody" />
+</div>
